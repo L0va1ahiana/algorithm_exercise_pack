@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus grand parmi 3</title>
+</head>
+<body>
+    <h1>Highest number among 3</h1>
+</body>
+<script>
+
+    const tab = []; // array used for storing the numbers
+    let max; // array used for storing the maximal value
+
+    for (let i = 0; i < 3; i++) {
+        tab[i] = parseInt(prompt(`Number ${i+1}: `));
+    }
+
+    // initializing the maximum amount
+    max = tab[0];
+    for (i = 1; i < 3; i++) {
+        if (max < tab[i]) {
+            max = tab[i];
+        }
+    }
+
+    console.log(tab);
+    console.log(`The highest number is ${max}`);
+
+</script>
+</html>

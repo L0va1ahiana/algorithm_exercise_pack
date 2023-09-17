@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majeur ou mineur</title>
+</head>
+<body>
+    <h1>Majeur ou mineur</h1>
+    <p id="answer"></p>
+</body>
+
+<script>
+    // ask the age of the person
+    let age = parseInt(prompt("How old are you ?"));
+    if (age >= 18) {
+        document.getElementById("answer").innerHTML = `You are at age`;
+    } else if (age < 18 && age > 0) {
+        document.getElementById("answer").innerHTML = `You are under age`;
+    } else {
+        document.getElementById("answer").innerHTML = `You are probably not born yet`;
+    }
+</script>
+
+</html>
