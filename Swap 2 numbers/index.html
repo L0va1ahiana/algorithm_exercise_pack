@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap 2 given numbers over</title>
+</head>
+<body>
+    <h1>Swap 2 given numbers over</h1>
+</body>
+
+<script>
+
+    // the 2 numbers to swap over
+    let a = parseFloat(prompt("Enter the number a: "));
+    let b = parseFloat(prompt("Enter the number b: "));
+    let temp; // a temporary variable helping with the swapping
+
+    console.log("a = " + a + " and b = " + b);
+    swap(a, b);
+    console.log("Now, after swapping them over, a = " + a + " and b = " + b);
+
+    // a function executing a swap
+    function swap() {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+</script>
+
+</html>

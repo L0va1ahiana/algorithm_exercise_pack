@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between even numbers and odd numbers</title>
+</head>
+<body>
+    <h1>Difference between even numbers and odd numbers</h1>
+</body>
+
+<script>
+
+    // creation of an array to store all the input numbers
+    const tab = [];
+    let i; // the index identifier in our array
+
+    // initialization of the even numbers sum and the odd numbers sum
+    let sum_even = 0;
+    let sum_odd = 0;
+
+    // the difference to calculate diff = Math.abs(sum_even - sum_odd)
+    let diff;
+
+    let seq = ""; // for displaying our array clearly
+    for (i = 0; i < 10; i++) {
+        tab[i] = parseInt(prompt(`Number ${i+1} = `));
+        seq += "  " + tab[i];
+    }
+
+    // display the sequence
+    console.log(seq);
+
+    // getting the difference now
+    for (i = 0; i < 10; i++) {
+        if (tab[i]%2 == 0) {
+            sum_even += tab[i];
+        } else {
+            sum_odd += tab[i];
+        }
+    }
+
+    console.log("The difference between even numbers and odd numbers is " + Math.abs(sum_even - sum_odd));
+
+</script>
+
+</html>

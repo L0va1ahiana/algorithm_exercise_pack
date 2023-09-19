@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test if it's Prime or not</title>
+</head>
+<body>
+    <h1>Is it a prime number or not ?</h1>
+</body>
+
+<script>
+
+    // number to test
+    let number = parseInt(prompt("Enter the number to test: "));
+
+    if (isPrime(number)) {
+        console.log("Yes, " + number + " is a Prime number");
+    } else {
+        console.log("No, " + number + " isn't a Prime number");
+    }
+
+    // a function testing whether or not a number is Prime
+    function isPrime(pnumber) {
+        let i = 2;
+        prime = true;
+
+        if (pnumber == 0) {
+            prime = false;
+            
+        } else {
+            while (i<pnumber) {
+
+                // not prime at all if it's divisible with any other number apart from itself and 1
+                if (pnumber%i == 0) {
+                    prime = false;
+                    break;
+                }
+                i++;
+            }
+        }
+
+        return prime;
+    }
+</script>
+
+</html>

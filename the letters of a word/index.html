@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The letters of a word</title>
+</head>
+<body>
+    <h1>The letters of a word</h1>
+</body>
+
+<script>
+
+    // the word entered by the user
+    let word = prompt("Give a random word, please: ");
+    let seq = ""; // to store all the letters for a good display
+
+    // split the word and store every letter in an array
+    let letters = word.split("");
+    console.log(letters);
+
+    // little intro for displaying all the letters in the given words
+    console.log("The letters in the word " + word + " are as follows:\n");
+
+    for (let i = 0; i < letters.length; i++) {
+        if (letters[i] != " ") {
+            seq += letters[i] + "  ";
+        }
+    }
+
+    console.log(seq);
+</script>
+
+</html>

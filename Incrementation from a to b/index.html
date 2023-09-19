@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrementation from a to b</title>
+</head>
+<body>
+    <h1>Incrementation from a to b</h1>
+</body>
+
+<script>
+
+    // a and b
+    console.log("Please input a and b:\n");
+    let a = parseInt(prompt("a = "));
+
+    /*
+    a variable to store the original value of a so that we can compare it 
+    with one of the incremented value
+    */
+    let orig_a = a; 
+
+    let b = parseInt(prompt("b = "));
+
+    let sequence = ""; // a string for the sequence of number
+
+    if (a>b) {
+        console.log(`We can't display anything because ${a} > ${b}`); 
+
+    } else {
+        while (a<=b) {
+
+            /*
+            there's a sign that shows the unit equals to one of our input
+            as our program shows the sequence
+            */
+            if (a == orig_a) {
+                sequence += "  " + a + "( = a)";
+
+            } else if (a == b) {
+                sequence += "  " + a + "( = b)";
+
+            } else if (a == orig_a && a == b) {
+                sequence += "  " + a + "(= a = b)";
+
+            } else {
+                sequence += "  " + a;
+            }
+            a++;
+        }
+    }
+
+    console.log(sequence);
+</script>
+
+</html>
