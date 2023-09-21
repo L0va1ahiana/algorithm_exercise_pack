@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it a valid email address ?</title>
+</head>
+<body>
+    <h1>Is it a valid email address ?</h1>
+</body>
+
+<script>
+
+    // input email
+    let mail = prompt("Enter your email address:");
+
+    // variable stating whether it's a valid email or not
+    let isEmail = true;
+
+    // we're going to filter the email input by the user here
+    
+    // verify if @ is included and it's preceded by something (does it start with anything other than @)
+    function atIncluded_in_the_Middle(pmail = "Lova's default parameter") {
+        if (pmail.trim().startsWith('@') || !pmail.includes('@')) {
+            return false;
+        }
+
+        return true;
+    }
+
+    // verify if "." exists and also following by 3 characters at most
+    function goodDotCondition(pmail = "Lova's default parameter") {
+
+        let goodCondition = false;
+    
+        // verify if it has any dots anywhere
+        if (pmail.includes('.')) {
+
+            /* 
+            this is ensuring that we are playing with the '.' that occurs after the '@'
+            */
+            if (pmail.lastIndexOf('.') > pmail.indexOf('@')) {
+                
+                /*
+                verify if there's nothing after the "." and
+                ensures if there's 3 or less characters after it by 
+                verifying the length of the string from the "." until the end 
+                */
+                if (pmail.charAt(pmail.lastIndexOf('.')).endsWith('') || 
+                    pmail.substr(pmail.lastIndexOf('.'), pmail.length-1).length > 4) {
+                    
+                    goodCondition = false;
+
+                } else {
+                    goodCondition = true;
+                }
+
+            } else {
+                goodCondition = false;
+            }
+        }
+
+        return goodCondition;
+    }
+
+</script>
+
+</html>

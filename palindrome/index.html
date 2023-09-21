@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>Palindrome</h1>
+</body>
+
+<script>
+
+    // get the input word
+    let word = prompt("Give a word to test: ");
+
+    if (isPalindrome(word)) {
+        console.log(`${word} is palindrome because we get the same one when we reverse it`);
+    } else {
+        console.log(`${word} is not palindrome because we don't get the same at reversal`);
+    }
+
+    function isPalindrome(pword) {
+        palindrome = false;
+        let reverse = ""; // the reversed word
+        let i = pword.length - 1;
+
+        // a block reversing the parameterized word
+        while (i>=0) {
+            reverse += pword.charAt(i);
+            i--;
+        }
+
+        // comparing the reversed version and the originally given word
+        if (pword.toLowerCase() === reverse.toLowerCase()) {
+            palindrome = true;
+        }
+
+        return palindrome;
+    }
+
+</script>
+
+</html>
