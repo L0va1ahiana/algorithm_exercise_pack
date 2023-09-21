@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which word is smaller ?</title>
+</head>
+<body>
+    <h1>Which word is smaller ?</h1>
+</body>
+
+<script>
+
+    // input words
+    let word1 = prompt("Enter the 1st word: ");
+    let word2 = prompt("Enter the 2nd word: ");
+
+    // output word aka the smaller one
+    let small_word = word1;
+
+    // we do not want to count the spaces at the start and at the end of the word
+    if (word1.trim().length > word2.trim().length) {
+        small_word = word2;
+    }
+
+    console.log(small_word.trim() + " is smaller :)");
+
+</script>
+
+</html>

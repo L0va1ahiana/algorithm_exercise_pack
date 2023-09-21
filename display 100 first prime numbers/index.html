@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 first Prime numbers</title>
+</head>
+<body>
+    <h1>100 first Prime numbers</h1>
+</body>
+
+<script>
+
+    // getting the 100 first prime numbers
+    let number = 1; // the first element of the sequence
+    let i = 0 // a counter
+    const tab = [];
+    let seq = ""; // a variable to store the sequence of numbers
+
+    while (i<100) {
+        if (isPrime(number)) {
+            tab.push(number)
+            seq += "  " + number;
+            i++;
+        }
+
+        number++; // move on to the next number
+    }
+
+    console.log(tab); // in an array format
+    console.log(seq); // in a stringified format
+
+    // a function testing whether or not a number is Prime: I just took the one from the previous exercise
+    function isPrime(pnumber) {
+        let i = 2;
+        prime = true;
+
+        if (pnumber == 0) {
+            prime = false;
+
+        } else {
+            while (i<pnumber) {
+
+                // not prime at all if it's divisible with any other number apart from itself and 1
+                if (pnumber%i == 0) {
+                    prime = false;
+                    break;
+                }
+                i++;
+            }
+        }
+
+        return prime;
+    }
+
+</script>
+
+</html>
