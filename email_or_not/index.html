@@ -15,10 +15,29 @@
     let mail = prompt("Enter your email address:");
 
     // variable stating whether it's a valid email or not
-    let isEmail = true;
+    let isEmail = false;
 
     // we're going to filter the email input by the user here
-    
+    if (atIncluded_in_the_Middle(mail) && goodDotCondition(mail)) {
+        isEmail = true;
+    }
+
+    if (isEmail) {
+        console.log(`${mail} is a valid email address`);
+
+    } else {
+        console.log(`${mail} is not a valid email address`);
+
+        // telling the user what might have gone wrong
+        if (!atIncluded_in_the_Middle(mail)) {
+            console.log(`We couldn't see any '@'\n`);
+        }
+
+        if (!goodDotCondition(mail)) {
+            console.log(`Either it doesn't have any '.' or there's probably more than 3 characters after it`);
+        }
+    }
+
     // verify if @ is included and it's preceded by something (does it start with anything other than @)
     function atIncluded_in_the_Middle(pmail = "Lova's default parameter") {
         if (pmail.trim().startsWith('@') || !pmail.includes('@')) {
@@ -42,15 +61,15 @@
             if (pmail.lastIndexOf('.') > pmail.indexOf('@')) {
                 
                 /*
+                make sure it's not directly preceded by '@',
                 verify if there's nothing after the "." and
                 ensures if there's 3 or less characters after it by 
                 verifying the length of the string from the "." until the end 
                 */
-                if (pmail.charAt(pmail.lastIndexOf('.')).endsWith('') || 
+                if (pmail.substr(pmail.lastIndexOf('.')-1, pmail.length-1).startsWith('@') ||
+                    pmail.substr(pmail.lastIndexOf('.'), pmail.length-1).length<2 || 
                     pmail.substr(pmail.lastIndexOf('.'), pmail.length-1).length > 4) {
-                    
                     goodCondition = false;
-
                 } else {
                     goodCondition = true;
                 }
