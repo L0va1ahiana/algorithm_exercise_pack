@@ -6,7 +6,7 @@
     <title>Is it a valid email address ?</title>
 </head>
 <body>
-    <h1>Is it a valid email address ?</h1>
+    <h1>Email address test</h1>
 </body>
 
 <script>
@@ -17,11 +17,12 @@
     // variable stating whether it's a valid email or not
     let isEmail = false;
 
-    // we're going to filter the email input by the user here
+    // we're going to filter the email input by the user here and it's true if it has all the needed characters
     if (atIncluded_in_the_Middle(mail) && goodDotCondition(mail)) {
         isEmail = true;
     }
 
+    // conclusion meant to be displayed to the user aka the outcome of the test
     if (isEmail) {
         console.log(`${mail} is a valid email address`);
 
@@ -29,16 +30,18 @@
         console.log(`${mail} is not a valid email address`);
 
         // telling the user what might have gone wrong
+        // if there's no '@'' in the email
         if (!atIncluded_in_the_Middle(mail)) {
             console.log(`We couldn't see any '@'\n`);
         }
 
+        // if there's not '.' at the right place
         if (!goodDotCondition(mail)) {
-            console.log(`Either it doesn't have any '.' or there's probably more than 3 characters after it`);
+            console.log(`Either it doesn't have any '.' or there's probably more than 3 characters after it or it might also be at the wrong position`);
         }
     }
 
-    // verify if @ is included and it's preceded by something (does it start with anything other than @)
+    // verify if '@' is included and it's preceded by something (does it start with anything other than @)
     function atIncluded_in_the_Middle(pmail = "Lova's default parameter") {
         if (pmail.trim().startsWith('@') || !pmail.includes('@')) {
             return false;
@@ -50,7 +53,7 @@
     // verify if "." exists and also following by 3 characters at most
     function goodDotCondition(pmail = "Lova's default parameter") {
 
-        let goodCondition = false;
+        let goodCondition = false; // do we have the dot at the right place ?
     
         // verify if it has any dots anywhere
         if (pmail.includes('.')) {
@@ -61,7 +64,7 @@
             if (pmail.lastIndexOf('.') > pmail.indexOf('@')) {
                 
                 /*
-                make sure it's not directly preceded by '@',
+                make sure the '.' is not directly preceded by '@',
                 verify if there's nothing after the "." and
                 ensures if there's 3 or less characters after it by 
                 verifying the length of the string from the "." until the end 
