@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid 2</title>
+</head>
+<body>
+    <h1>Pyramid 2 (with space on the left)</h1>
+</body>
+
+<script>
+
+    // the initial number of star and space
+    star_number = 1;
+    space_number = 3
+
+    // where to store the sequences of stars and spaces for a great look on the output
+    star_sequence = "";
+    space_sequence = "";
+
+    for (let i = 0; i < 4; i++) {
+
+        // adding the space
+        for (let j = 0; j < space_number; j++) {
+            space_sequence+=" ";
+        }
+
+        // adding the stars
+        for (let k = 0; k < star_number; k++) {
+            star_sequence+="*"
+        }
+
+        star_number+=2;
+        space_number--;
+
+        // displaying a row of space and stars
+        console.log(space_sequence + star_sequence + "\n");
+        
+        star_sequence = "";
+        space_sequence = "";
+    }
+
+</script>
+
+</html>

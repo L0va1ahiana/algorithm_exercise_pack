@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amount of words</title>
+</head>
+<body>
+    <h1>Amount of words in a sentence</h1>
+</body>
+
+<script>
+
+    // get the sentence from the user
+    let sentence = prompt("Please type a sentence of your choice:");
+    const word_group = sentence.split(" "); // this is how we'll take every word in the given sentence
+    console.log(word_group);
+
+    // the output word number
+    let word_number = 0;
+
+    // making sure empty elements are not counted
+    for (let i = 0; i < word_group.length; i++) {
+        if (word_group[i] != '') {
+            word_number++;
+        }
+    }
+
+    // display the result
+    if (word_number == 0) {
+        console.log("No word found at all !");
+    } else {
+        console.log(`Your sentence contains ${word_number} word(s)`);
+    }
+
+</script>
+
+</html>
